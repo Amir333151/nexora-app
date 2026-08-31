@@ -1,0 +1,13 @@
+name: Build Nexora APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with:
+      upload-artifact: true
+      tag-name: draft
+      channel: dev
+    secrets: inherit
